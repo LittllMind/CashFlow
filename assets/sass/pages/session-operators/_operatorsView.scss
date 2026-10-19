@@ -1,0 +1,259 @@
+/*---------------------- O P E R A T O R S ----------------*/
+
+.operator {
+    width: 100%;
+    /**/
+    &-head {
+        background-color: $white;
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        /**/
+        &-title {
+            align-self: center;
+            justify-self: center;
+            padding-top: 3%;
+            font-weight: bold;
+            /**/
+            &-sub {
+                align-self: center;
+                justify-self: center;
+                padding-bottom: 3%;
+                font-weight: bold;
+            }
+        }
+    }
+    /**/
+    &-list {
+        background-color: $green-yellow-crayola;
+        padding-top: 4%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /**/
+        &-title {
+            color: $white;
+            padding-bottom: 3%;
+            text-decoration: underline;
+        }
+        /**/
+        &-container {
+            width: 85%;
+            background-color: $white;
+            border: 5px solid $white;
+            border-radius: 10px 10px 10px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 0.1%;
+            /**/
+            &-table {
+                width: 100%;
+                /**/
+                &-head {
+                    text-align: center;
+                    padding: 2%;
+                    height: 50px;
+                }
+                /**/
+                &-body {
+                    tr {
+                        margin: 1.5%;
+                        padding: 1.5%;
+                        /**/
+                        th {
+                            text-align: center;
+                        }
+                        /**/
+                        td {
+                            text-align: center;
+                            width: 200px;
+                            padding: 1.5%;
+                        }
+                    }
+                    /**/
+                    &-number {
+                        border-right: thin solid $green-yellow-crayola;
+                    }
+                }
+                /**/
+                &-foot {
+                    border-top: thin solid $green-yellow-crayola;
+                    /**/
+                    td {
+                        padding: 1.5%;
+                    }
+                }
+            }
+        }
+        /**/
+        &-provided {
+            width: 85%;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    /**/
+    &-form {
+        background-color: $green-yellow-crayola;
+        padding-top: 4%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /**/
+        &-title {
+            color: $white;
+            padding-bottom: 3%;
+            text-decoration: underline;
+        }
+        form {
+            width: 85%;
+            flex-direction: column;
+            align-items: center;
+            h5 {
+                font-weight: bold;
+                margin: 5%;
+            }
+        }
+        /**/
+        &-items {
+            background-color: $white;
+            width: 100%;
+            padding: 2%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+            input {
+                width: 60%;
+            }
+            select {
+                background-color: $white;
+                text-align: center;
+                border-radius: 8px;
+                height: 30px;
+                width: 90%;
+                font-size: 1.2em;
+                margin: 1%;
+                option {
+                    text-align: center;
+                }
+            }
+        }
+        /**/
+        &-manage {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            background-color: $white;
+            border-radius: 0 0 10px 10px;
+            /**/
+            &-submit {
+                @include button-submit;
+                transition-duration: 700ms;
+                transform: scale(1);
+                font-weight: bold;
+                font-size: 1em;
+                /**/
+                &:hover {
+                    color: $submit;
+                    background-color: $white;
+                    transform: scale(1.1);
+                    font-weight: bold;
+                }
+            }
+            /**/
+            &-update {
+                @include button-manage;
+                transition-duration: 700ms;
+                transform: scale(1);
+                font-weight: bold;
+                font-size: 1em;
+                padding-left: 6%;
+                padding-right: 6%;
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    /**/
+                    &:hover {
+                        text-decoration: none;
+                        color: $white;
+                    }
+                }
+                /**/
+                &:hover {
+                    background-color: $dark-liver;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .operator {
+        /**/
+        &-form {
+            /**/
+            form {
+                width: 60%;
+            }
+            /**/
+            &-items {
+                /**/
+                input {
+                    width: 60%;
+                }
+                /**/
+                select {
+                    width: 60%;
+                    font-size: 1.2em;
+                }
+            }
+        }
+        /**/
+        &-list {
+            /**/
+            &-container {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 975px) {
+    .operator {
+        /**/
+        &-form {
+            /**/
+            form {
+                width: 40%;
+            }
+            /**/
+            &-items {
+                border-radius: 10px 10px 0 0;
+                /**/
+                input {
+                    width: 40%;
+                }
+                /**/
+                select {
+                    width: 50%;
+                    font-size: 1.2em;
+                }
+            }
+        }
+        /**/
+        &-list {
+            /**/
+            &-container {
+                width: 40%;
+            }
+        }
+    }
+}

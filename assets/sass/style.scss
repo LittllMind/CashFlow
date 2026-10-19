@@ -1,0 +1,31 @@
+
+/*  sass c:/laragon/www/cashflow/assets/sass/style.scss c:/laragon/www/cashflow/assets/css/style.css --watch */
+@import "./utils/reset.scss";
+
+/* ====================== E N D   R E S E T ================= */
+
+@import "./utils/variables";
+@import "./bases/fonts";
+
+/**/
+
+@import "./layouts/header";
+@import "./layouts/footer";
+@import "./layouts/global";
+
+/**/
+
+/**/
+
+@import "./pages/users/addUser";
+@import "./pages/users/connexion";
+@import "./pages/control-panel/purchase/update.scss";
+// @import "./pages/control-panel/sale/control-panel.scss";
+@import "./pages/result/result.scss";
+@import "./pages/articles/articles";
+
+/* NOUVELLE STRUCTURE */
+
+@import "../../view/template/mainTemplate";
+@import "../../view/control-panel/sale/update/update";
+@import "../../view/control-panel/sale/control-panel/control-panel";

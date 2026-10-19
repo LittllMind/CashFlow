@@ -1,0 +1,148 @@
+.display-psy {
+    background-color: $main-background;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /**/
+    &-head {
+        width: 100%;
+        height: 100px;
+        background-color: $honeydew;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    /**/
+    &-main {
+        width: 100%;
+        text-align: center;
+        /**/
+        &-title {
+            width: 100%;
+            background-color: $main-background;
+            color: $honeydew;
+        }
+        /**/
+        &-form {
+            background-color: $honeydew;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /**/
+            &-date {
+                width: 200px;
+                padding-top: 30px;
+            }
+            /**/
+            &-manage {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                background-color: $honeydew;
+                border-radius: 0 0 10px 10px;
+                /**/
+                &-submit {
+                    @include button-submit;
+                    margin-top: 20px;
+                    transition-duration: 700ms;
+                    transform: scale(1);
+                    font-weight: bold;
+                    font-size: 1em;
+                    /**/
+                    &:hover {
+                        color: $submit;
+                        background-color: $white;
+                        transform: scale(1.05);
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        /**/
+        &-content {
+            width: 100%;
+            background-color: $honeydew;
+            border-radius: 15px;
+            table {
+                width: 100%;
+                tr {
+                    padding-top: 10%;
+                }
+                th {
+                    padding: 1%;
+                }
+                td {
+                    text-align: center;
+                    background-color: $main-background;
+                    color: $honeydew;
+                    width: 20%;
+                }
+            }
+            &-item {
+                background-color: $main-background;
+                text-align: center;
+                color: $honeydew;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .display-psy {
+        /**/
+        &-head {
+            margin-top: 40px;
+        }
+        /**/
+        &-main {
+            width: 70%;
+            /**/
+            &-title {}
+            /**/
+            &-form {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            /**/
+            &-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 3%;
+                table {
+                    width: 70%;
+                    th {
+                        border-bottom: $main-background solid thin;
+                    }
+                    td {
+                        border-bottom: $honeydew solid thin;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 975px) {
+    .display-psy {
+        /**/
+        &-head {
+            margin-top: 40px;
+        }
+        /**/
+        &-main {
+            /**/
+            /**/
+            &-title {
+                margin-top: 3%;
+            }
+            /**/
+            &-content {}
+        }
+    }
+}

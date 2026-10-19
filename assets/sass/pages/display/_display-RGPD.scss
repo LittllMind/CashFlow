@@ -1,0 +1,99 @@
+.display-RGPD {
+    height: 100%;
+    background-color: $main-background;
+    /**/
+    &-head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $honeydew;
+        margin-top: 2px;
+        height: 100px;
+    }
+    /**/
+    &-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /**/
+        &-title {
+            margin-top: 10%;
+            color: $honeydew;
+            padding-bottom: 2%;
+        }
+        /**/
+        &-content {
+            width: 100%;
+            padding: 2%;
+            border-radius: 15px;
+            background-color: $honeydew;
+            /**/
+            &-item {
+                border-bottom: solid thin $main-background;
+                display: flex;
+                flex-direction: column;
+                /**/
+                &-user {
+                    width: 100%;
+                }
+                /**/
+                &-interaction {
+                    width: 100%;
+                    padding: 2%;
+                    background-color: $main-background-soft;
+                    display: flex;
+                    flex-direction: column;
+                    table {
+                        width: 100%;
+                        border-bottom: $honeydew solid thin;
+                        text-align: left;
+                        td {
+                            width: 33%;
+                            padding: 2%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .display-RGPD {
+        /**/
+        &-head {
+            margin-top: 40px;
+        }
+        /**/
+        &-main {
+            /**/
+            width: 100%;
+            /**/
+            &-title {
+                margin-top: 3%;
+            }
+            /**/
+            &-content {
+                width: 80%;
+                /**/
+                &-item {
+                    flex-direction: row;
+                    /**/
+                    &-user {
+                        width: 35%;
+                    }
+                    /**/
+                    &-interaction {
+                        width: 65%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 975px) {
+    .display-RGPD {}
+}

@@ -1,0 +1,165 @@
+/* ================= M E N U ======================= */
+
+.selection {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50px 50px 0 0;
+    height: auto;
+    background-color: $background-secondary;
+    padding-bottom: 10%;
+    /**/
+    &-title {
+        margin-left: 6%;
+    }
+    /**/
+    &-underline {
+        margin-top: 1%;
+        margin-left: 6%;
+        max-width: 10%;
+        min-height: 3px;
+        background-color: $underline;
+    }
+    /**/
+    &-btn {
+        @include button;
+        margin-top: 10%;
+        margin-right: 25%;
+        margin-left: 25%;
+        margin-bottom: 25%;
+        text-align: center;
+    }
+    /**/
+    &-starter {
+        animation: fadein 4s;
+        -moz-animation: fadein 4s;
+        /* Firefox */
+        -webkit-animation: fadein 4s;
+        /* Safari et Chrome */
+        -o-animation: fadein 4s;
+        /* Opera */
+        animation: fadein 4s;
+        -moz-animation: fadein 4s;
+        /* Firefox */
+        -webkit-animation: fadein 4s;
+        /* Safari et Chrome */
+        -o-animation: fadein 4s;
+        /* Opera */
+    }
+}
+
+.selection-head {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 5%;
+    /**/
+    &-title {
+        font: $ovink;
+        font-size: 1.5em;
+        margin-left: 10%;
+    }
+    /**/
+    &-icon {
+        margin-right: 5%;
+    }
+}
+
+.dish {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    cursor: pointer;
+    margin: 4%;
+    /**/
+    &-title {
+        font: $ovink;
+        padding-bottom: 2%;
+        font-weight: bold;
+    }
+    /**/
+    &-details {
+        display: flex;
+        justify-content: space-between;
+        font: $ovink;
+    }
+    /**/
+    &-price {
+        font-weight: bold;
+    }
+}
+
+.dish-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $background-primary;
+    border-radius: 16px;
+    padding: 4%;
+    width: 100%;
+    height: 100%;
+    /**/
+    transition-duration: 1000ms;
+    transform: scale(1);
+    &:hover {
+        transform: scale(1);
+        border-radius: 16px 0 0 16px;
+    }
+}
+
+.dish-validate {
+    width: 0px;
+    height: 100%;
+    background-color: $dish-selection-validate;
+    visibility: hidden;
+    transition-duration: 1000ms;
+    transform: rotate(0deg);
+    /**/
+    &-check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $dish-selection-validate;
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-right: 8px;
+        background-color: $background-primary;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+}
+
+.dish-infos:hover+.dish-validate {
+    z-index: 1;
+    transform: scale(1.2em);
+    visibility: unset;
+    border-radius: 0 16px 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    &>.dish-validate-check {
+        transform: rotate(0deg);
+    }
+}
+
+.dish-validate-check {
+    transform: rotate(360deg);
+    transition: transform 500ms ease-in;
+    align-self: center;
+    z-index: 0;
+}
+
+
+/******************************* T E S T S ********************************/
+
+.transition {
+    padding-top: 1300px
+}

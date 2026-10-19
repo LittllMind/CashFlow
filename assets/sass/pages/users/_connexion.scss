@@ -1,0 +1,108 @@
+.connexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $green-yellow-crayola;
+    /**/
+    &-head {
+        width: 100%;
+        background-color: $white;
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        // padding-top: 25%;
+        /**/
+        &-title {
+            align-self: center;
+            justify-self: center;
+            font-weight: bold;
+            padding-bottom: 1%;
+            h5 {}
+        }
+    }
+    /**/
+    &-form {
+        background-color: $green-yellow-crayola;
+        margin-top: 5%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            width: 90%;
+            background-color: $white;
+            border-radius: 10px 10px 10px 10px;
+            margin-bottom: 6%;
+        }
+        /**/
+        &-group {
+            width: 90%;
+            padding-bottom: 4%;
+        }
+        /**/
+        &-manage {
+            padding-top: 5%;
+            /**/
+            &-submit {
+                @include button-submit;
+                transition-duration: 700ms;
+                transform: scale(1);
+                font-weight: bold;
+                font-size: 1em;
+                /**/
+                &:hover {
+                    color: $submit;
+                    background-color: $baby-powder;
+                    transform: scale(1.1);
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .connexion {
+        /**/
+        &-head {
+            padding-top: 10%;
+        }
+        /**/
+        &-form {
+            /**/
+            form {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 975px) {
+    .connexion {
+        /**/
+        &-head {
+            padding-top: 8%;
+        }
+        /**/
+        &-form {
+            /**/
+            form {
+                width: 30%;
+                /**/
+                &-group {
+                    width: 70%;
+                }
+            }
+        }
+    }
+}

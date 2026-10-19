@@ -1,0 +1,124 @@
+// Tableau principal
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  thead {
+    background: #f8f9fa;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  th,
+  td {
+    border: 1px solid #dee2e6;
+    padding: 12px 10px;
+  }
+
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  tfoot {
+    font-weight: bold;
+    background-color: #e9ecef;
+  }
+
+  tr.achat {
+    background-color: #fff5f5; // rouge pâle
+  }
+
+  tr.vente {
+    background-color: #f0fff4; // vert pâle
+  }
+}
+
+// Résumé (synthèse globale)
+#summary-container {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+
+  table {
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: transparent;
+
+    th {
+      background-color: #e2e6ea;
+    }
+
+    td,
+    th {
+      border: 1px solid #ced4da;
+      text-align: center;
+    }
+
+    tr:nth-child(3) td {
+      font-weight: bold;
+    }
+
+    td:last-child {
+      font-weight: bold;
+    }
+  }
+}
+
+// Filtres catégorie / sous-catégorie
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+
+  label {
+    font-weight: bold;
+  }
+
+  select,
+  button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: 0.3s ease;
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}

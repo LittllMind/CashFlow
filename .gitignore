@@ -1,0 +1,41 @@
+node_modules/
+sessions/
+state/
+memory/
+cron/
+*.log
+.env
+env.php
+env.php.backup.*
+*.sql
+uploads/
+!README.md
+!docs/README.md
+security_*.md
+sql_*.php
+category_*.php
+test_*.php
+heartbeat.log
+dev-env/
+
+.aider*
+
+# Fichiers one-shot / debug (jamais versionnés)
+cookie*.txt
+EOF
+sync.php
+extract_sync.php
+testdb.php
+
+# Documents générés par l'application (virements CB, exports...)
+docs/
+
+# Composer — dependencies gérées par composer.lock
+vendor/
+
+# Dev tooling / CI local
+.phpunit.cache/
+
+!migrations/
+!migrations/*.sql
+!migrations/*.rollback.sql

@@ -1,0 +1,251 @@
+// Styles pour le panneau de contrôle
+.message-button-container {
+  border: 5px solid $message-theme;
+  border-radius: 0.5em;
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    padding: 10px;
+    background-color: $message-theme-light;
+    border: 2px solid $message-theme;
+    color: $honeydew;
+  }
+}
+
+.message-container {
+  border: 5px solid $message-theme;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 0.5em;
+}
+
+.message-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $message-theme-light;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  button {
+    background-color: $message-theme-light;
+    border: 2px solid $message-theme;
+
+    border-radius: 10px;
+    align-items: right;
+  }
+}
+
+.message-send {
+  padding: 10px;
+  background-color: $message-theme-light;
+  border: 2px solid $message-theme;
+
+  &-container {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    button {
+      width: 60px;
+    }
+
+    img {
+      width: 70%;
+    }
+  }
+}
+
+.message-list {
+  padding-top: 5%;
+  width: 100%;
+}
+
+.message-item {
+  width: 100%;
+  border-radius: .5em;
+  border: 2px solid $message-theme;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.message-meta {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: $message-theme-light;
+
+  button {
+    img {
+      width: 80%;
+    }
+
+    ;
+  }
+}
+
+.message-text {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-background;
+  color: $honeydew;
+  margin-top: 2%;
+  margin-bottom: 6%;
+}
+
+.message-details {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.control-panel {
+  padding-top: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: $honeydew;
+  border-radius: 10px;
+
+  // Styles pour l'en-tête du panneau de contrôle
+  &-head {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  // Styles pour les formulaires dans le panneau de contrôle
+  &-form {
+    margin-bottom: 10%;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    // Styles pour les boutons dans les formulaires
+    &-button {
+      background-color: $main-background;
+      border: none;
+      padding: 3rem;
+      font-size: 16px;
+      color: $honeydew;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $raisin-black;
+      }
+    }
+
+    // Styles pour les sélecteurs de date
+    .date-selectors {
+      input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $dark-liver;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  // Styles pour la liste des ventes
+  &-list {
+
+    // Styles pour le titre de la liste
+    .control-panel-list-title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    // Styles pour le contenu de la liste
+    .control-panel-list-form {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+          border: 1px solid $silver-pink;
+          padding: 10px;
+        }
+
+        th {
+          background-color: $green-yellow-crayola;
+          color: $honeydew;
+          font-size: 18px;
+        }
+
+        td {
+          font-size: 16px;
+        }
+
+        // Styles pour le bouton de suppression
+        .delete-button {
+          border: none;
+          padding: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+
+          &:hover {
+            background-color: #1818;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sale-actions {
+  display: flex;
+  width: 100%;
+  margin-top: 1rem; // pour respirer un peu
+
+  .btn-action {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    background: #f0f0f0;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #e0e0e0;
+    }
+  }
+
+  .btn-sale {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+
+    &:hover {
+      background: #0056b3;
+    }
+  }
+}

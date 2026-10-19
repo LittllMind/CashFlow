@@ -1,0 +1,316 @@
+/*----------------------- L I E U X----------------*/
+
+.lieu {
+    height: 100%;
+    /**/
+    &-head {
+        background-color: $white;
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        /**/
+        &-date {
+            align-self: center;
+            justify-self: center;
+            padding-top: 3%;
+            font-weight: bold;
+        }
+    }
+    /**/
+    &-form {
+        background-color: $green-yellow-crayola;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        form {
+            width: 85%;
+            flex-direction: column;
+            align-items: center;
+            select {
+                background-color: $white;
+                border-radius: 8px;
+                height: 35px;
+                font-size: 1.1em;
+                margin: 1%;
+            }
+        }
+        /**/
+        &-title {
+            text-align: center;
+            padding-bottom: 10%;
+            background-color: $green-yellow-crayola;
+            color: $white;
+            padding-top: 2%;
+            padding-bottom: 3%;
+            width: 100%;
+            height: 50px;
+            text-decoration: underline;
+        }
+        /**/
+        &-infos {
+            background-color: $white;
+            border-radius: 10px 10px 0 0;
+            padding-top: 4%;
+            padding-bottom: 2%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /**/
+            input {
+                width: 90%;
+            }
+        }
+        /**/
+        &-place {
+            background-color: $white;
+            width: 100%;
+            padding: 2%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input {
+                width: 60%;
+            }
+            select {
+                background-color: $white;
+                text-align: center;
+                border-radius: 8px;
+                height: 30px;
+                width: 90%;
+                font-size: 1.2em;
+                option {
+                    text-align: center;
+                }
+            }
+        }
+        /**/
+        &-manage {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            background-color: $white;
+            border-radius: 0 0 10px 10px;
+            /**/
+            &-submit {
+                @include button-submit;
+                transition-duration: 700ms;
+                transform: scale(1);
+                font-weight: bold;
+                font-size: 1em;
+                /**/
+                &:hover {
+                    color: $submit;
+                    background-color: $white;
+                    transform: scale(1.1);
+                    font-weight: bold;
+                }
+            }
+            /**/
+            &-update {
+                @include button-manage;
+                transition-duration: 700ms;
+                transform: scale(1);
+                font-weight: bold;
+                font-size: 1em;
+                padding-left: 6%;
+                padding-right: 6%;
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    /**/
+                    &:hover {
+                        text-decoration: none;
+                        color: $white;
+                    }
+                }
+                /**/
+                &:hover {
+                    background-color: $dark-liver;
+                    font-weight: bold;
+                }
+            }
+            /**/
+            &-delete {
+                @include button-delete;
+                transition-duration: 700ms;
+                transform: scale(1);
+                font-weight: bold;
+                /**/
+                &:hover {
+                    transform: scale(1.1);
+                    background-color: $white;
+                    color: $delete;
+                    a {
+                        color: $delete;
+                        font-weight: bold;
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    /**/
+                    table {
+                        width: 100%;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                        color: $delete;
+                    }
+                }
+            }
+        }
+    }
+    /**/
+    &-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $green-yellow-crayola;
+        text-align: left;
+        margin-bottom: 6%;
+        /**/
+        &-title {
+            text-align: center;
+            padding-bottom: 10%;
+            background-color: $green-yellow-crayola;
+            color: $white;
+            padding-top: 2%;
+            padding-bottom: 2.5%;
+            width: 100%;
+            height: 50px;
+            text-decoration: underline;
+        }
+        /**/
+        &-form {
+            background-color: $white;
+            width: 85%;
+            margin-top: 0.5%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px 10px 10px 10px;
+            /**/
+            &-content {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                text-decoration: none;
+                background-color: $silver-pink;
+                width: 80%;
+                margin: 1%;
+                border-radius: 10px 10px 10px 10px;
+                color: $dark-liver-horses;
+                transition-duration: 700ms;
+                transform: scale(1);
+                /**/
+                &:hover {
+                    transform: scale(1.02);
+                    text-decoration: none;
+                    color: $dark-liver-horses;
+                }
+                /**/
+                &-info {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    /**/
+                    thead {
+                        border-bottom: solid thin $dark-liver;
+                        /**/
+                    }
+                    /**/
+                    th {
+                        width: 30%;
+                    }
+                    /**/
+                    td {
+                        width: 30%;
+                        text-align: 30%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .lieu {
+        /**/
+        &-form {
+            /**/
+            form {
+                width: 60%;
+            }
+            /**/
+            &-infos {
+                /**/
+                input {
+                    width: 60%;
+                }
+            }
+            /**/
+            &-place {
+                /**/
+                input {
+                    width: 40%;
+                }
+                /**/
+                select {
+                    width: 60%;
+                    font-size: 1.2em;
+                }
+            }
+        }
+        /**/
+        &-list {
+            /**/
+            &-form {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 975px) {
+    .lieu {
+        /**/
+        &-form {
+            /**/
+            form {
+                width: 50%;
+            }
+            /**/
+            &-infos {
+                border-radius: 10px 10px 0 0;
+                /**/
+                input {
+                    width: 40%;
+                }
+            }
+            /**/
+            &-place {
+                input {
+                    width: 40%;
+                }
+                select {
+                    width: 40%;
+                    font-size: 1.2em;
+                }
+            }
+        }
+        /**/
+        &-list {
+            /**/
+            &-form {
+                width: 50%;
+            }
+        }
+    }
+}

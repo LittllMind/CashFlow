@@ -1,0 +1,272 @@
+.table-columns {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.column {
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.compact-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10pt;
+}
+
+.compact-table th,
+.compact-table td {
+  border: 1px solid #444;
+  padding: 3px 4px;
+  text-align: left;
+}
+
+/* Impression optimisée */
+@media print {
+  body {
+    font-size: 9pt;
+    margin: 1cm;
+  }
+
+  .compact-table {
+    font-size: 8pt;
+  }
+
+  .compact-table th,
+  .compact-table td {
+    padding: 2px 3px;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 1cm;
+  }
+}
+
+
+.meta-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.summary {
+  padding-top: 2rem;
+  width: 55%;
+}
+
+.signature {
+  padding-top: 2rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11pt;
+}
+
+.summary-table td {
+  padding: 4px 6px;
+  vertical-align: top;
+}
+
+.line {
+  border-top: 1px solid #000;
+  margin-top: 2rem;
+  height: 2rem;
+}
+
+/* Impression */
+@media print {
+  .meta-grid {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .summary-table {
+    font-size: 9pt;
+  }
+
+  .summary-table td {
+    padding: 2px 4px;
+  }
+
+  .line {
+    margin-top: 1.5rem;
+    height: 1.5rem;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 1cm;
+  }
+}
+
+.result-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+
+  &-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+  }
+
+  &-list {
+    &-table {
+
+      max-height: 400px;
+      overflow-y: auto;
+      display: block;
+
+      table {
+
+
+
+        width: 100%;
+        margin-bottom: 20px;
+
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+          border: 1px solid $silver-pink;
+          padding: 10px;
+        }
+
+        th {
+          background-color: $green-yellow-crayola;
+          color: $honeydew;
+          font-size: 18px;
+        }
+
+        td {
+          font-size: 16px;
+        }
+
+        // Styles pour le bouton de suppression
+        .delete-button {
+          border: none;
+          padding: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+
+          &:hover {
+            background-color: #1818;
+          }
+        }
+      }
+    }
+  }
+}
+
+.meta-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.summary-table {
+  font-size: 14px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.summary-table td {
+  padding: 4px 8px;
+}
+
+.signature .line {
+  border-bottom: 1px solid #000;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.monthly-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.monthly-summary-table th,
+.monthly-summary-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.monthly-summary-table th {
+  background-color: #f4f4f4;
+}
+
+.monthly-summary-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.positive {
+  color: green;
+  font-weight: bold;
+}
+
+.negative {
+  color: red;
+  font-weight: bold;
+}
+
+// MONTH
+
+.monthly-summary-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.summary-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.summary-column table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+.summary-column th,
+.summary-column td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.summary-column th {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .monthly-summary-row {
+    flex-direction: column;
+  }
+}

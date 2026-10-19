@@ -1,0 +1,128 @@
+/* Page Articles — design system warm isolé */
+
+.articles-panel .articles-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--sp-surface, #fff);
+  border: 1px solid var(--sp-border, #e9e2dc);
+  border-radius: var(--sp-radius, 12px);
+}
+
+.articles-panel .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 220px;
+  flex: 1;
+}
+
+.articles-panel label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--sp-text-sec, #666);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.articles-panel select {
+  width: 100%;
+}
+
+/* Onglets années */
+.year-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--sp-surface, #fff);
+  padding: 0.75rem;
+  border-radius: var(--sp-radius, 12px);
+  box-shadow: var(--sp-shadow, 0 2px 8px rgba(0,0,0,0.06));
+}
+
+.year-tab {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--sp-border, #e9e2dc);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--sp-text, #3d3d3d);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.year-tab:hover {
+  background: var(--sp-bg, #f9f6f3);
+}
+
+.year-tab.active {
+  background: var(--sp-primary, #c08a5d);
+  color: #fff;
+  border-color: var(--sp-primary, #c08a5d);
+}
+
+/* Badges achat/vente (dans le tableau) */
+.badge-type {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-vente {
+  background: #e6f4ea;
+  color: var(--sp-success, #4a7c59);
+}
+
+.badge-achat {
+  background: #fdecea;
+  color: var(--sp-danger, #c0392b);
+}
+
+/* Carte bilan */
+.sp-stat-card--bilan {
+  border-top: 3px solid var(--sp-primary, #c08a5d);
+}
+
+.sp-stat-card--danger {
+  border-top: 3px solid var(--sp-danger, #c0392b);
+}
+
+/* Couleurs de ligne */
+#articles-table tbody tr.vente {
+  background-color: #f4faf6;
+}
+#articles-table tbody tr.achat {
+  background-color: #fff8f7;
+}
+
+/* État vide */
+#empty-state {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 2rem;
+  color: var(--sp-text-sec, #757575);
+}
+
+#empty-state .sp-empty__icon {
+  font-size: 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .articles-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .year-tabs {
+    justify-content: center;
+  }
+}

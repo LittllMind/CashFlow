@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'feature/**']
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo, pdo_mysql
+          coverage: none
+
+      - name: Validate composer.json
+        run: composer validate --strict
+
+      - name: Syntax check PHP
+        run: |
+          failed=0
+          while IFS= read -r file; do
+            if ! php -l "$file" > /dev/null 2>&1; then
+              echo "Syntax error in: $file"
+              failed=1
+            fi
+          done < <(find . -name '*.php' -not -path './vendor/*' -print)
+          exit $failed
+
+      #- name: Run PHPUnit
+      #  run: vendor/bin/phpunit
+
+      - name: Check env.php is not tracked
+        run: |
+          if git ls-files | grep -E '^env\.php$|^model/env\.php$'; then
+            echo "ERROR: env.php should not be tracked"
+            exit 1
+          fi

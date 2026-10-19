@@ -1,0 +1,583 @@
+/* =============================================================
+   SALE PANEL UNIFIED — Mobile First
+   ============================================================= */
+
+/* -----------------------------------------------------------
+   MOBILE (base < 768px) — Styles par défaut
+   ----------------------------------------------------------- */
+
+/* Wrapper principal */
+.sale-panel-unified {
+  max-width: 100%;
+  margin: 0;
+  padding: var(--sale-space-sm);
+}
+
+/* Header vertical et centré sur mobile */
+.panel-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sale-space-sm);
+  background: var(--sale-surface);
+  border: 1px solid var(--sale-border-light);
+  border-radius: var(--sale-radius-lg);
+  padding: var(--sale-space-md);
+  margin-bottom: var(--sale-space-md);
+  box-shadow: var(--sale-shadow-sm);
+  text-align: center;
+}
+
+.panel-header-left,
+.panel-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sale-space-sm);
+  flex-wrap: wrap;
+}
+
+.panel-icon { font-size: 1.2em; }
+
+.panel-title {
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--sale-text);
+}
+
+.panel-sale-id {
+  font-size: 0.72em;
+  color: var(--sale-text-secondary);
+  background: var(--sale-secondary);
+  padding: 2px 6px;
+  border-radius: var(--sale-radius-full);
+}
+
+.panel-total-label {
+  font-size: 0.7em;
+  color: var(--sale-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.panel-total-value {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--sale-success);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tableau : scroll horizontal si nécessaire */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sale-articles-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--sale-surface);
+  border-radius: var(--sale-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--sale-shadow-md);
+  font-size: 0.82em;
+}
+
+.sale-articles-table thead {
+  background: var(--sale-primary);
+}
+
+.sale-articles-table th {
+  padding: var(--sale-space-xs) var(--sale-space-sm);
+  text-align: left;
+  font-size: 0.65em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sale-text-inverse);
+  white-space: nowrap;
+}
+
+/* Colonnes compactes sur mobile */
+.col-num     { width: 28px; text-align: center; }
+.col-cat     { min-width: 120px; max-width: 220px; }
+.col-qty     { width: 90px; text-align: center; }
+.col-price   { width: 95px; text-align: center; }
+.col-line    { width: 55px; text-align: right; }
+.col-comment { min-width: 50px; max-width: 80px; }
+.col-actions { width: 32px; text-align: center; }
+
+.col-total   { width: 55px; text-align: right; }
+.col-action  { width: 36px; text-align: center; }
+
+/* Nom d'article : emoji + catégorie + sous-catégorie */
+.article-name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.article-emoji {
+  font-size: 1em;
+  flex-shrink: 0;
+}
+
+.article-cat {
+  font-weight: 600;
+  font-size: 0.78em;
+  color: var(--sale-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.article-sep {
+  font-size: 0.7em;
+  color: var(--sale-text-muted);
+  flex-shrink: 0;
+}
+
+.article-sub {
+  font-size: 0.72em;
+  color: var(--sale-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/* Lignes articles */
+.article-row {
+  border-bottom: 1px solid var(--sale-border-light);
+  transition: background 0.15s;
+}
+
+.article-row:hover {
+  background: var(--sale-bg-secondary);
+}
+
+.article-row:last-of-type {
+  border-bottom: none;
+}
+
+.sale-articles-table td {
+  padding: var(--sale-space-xs) var(--sale-space-sm);
+  vertical-align: middle;
+}
+
+/* Numéro de ligne */
+.row-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--sale-primary-light);
+  color: var(--sale-primary-dark);
+  font-size: 0.65em;
+  font-weight: 700;
+  border-radius: var(--sale-radius-full);
+}
+
+/* Catégorie / sous-catégorie : ellipsis pour tenir dans l'espace */
+.cell-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.cell-cat,
+.cell-val {
+  font-size: 0.78em;
+  font-weight: 600;
+  color: var(--sale-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cell-sep {
+  font-size: 0.65em;
+  color: var(--sale-text-tertiary);
+}
+
+.cell-sub {
+  font-size: 0.72em;
+  color: var(--sale-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Steppers : touch targets minimum 32px
+   On utilise .card-stepper (classe JS existante) dans les TD */
+.card-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--sale-bg-secondary);
+  border: 1px solid var(--sale-border-medium);
+  border-radius: var(--sale-radius-md);
+  padding: 2px;
+}
+
+.card-stepper .stepper-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.card-stepper .stepper-btn img {
+  width: 14px;
+  height: 14px;
+}
+
+.card-stepper .stepper-btn:hover {
+  background: var(--sale-border-light);
+}
+
+.card-stepper .stepper-val {
+  min-width: 24px;
+  text-align: center;
+  font-size: 0.85em;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  padding: 0 2px;
+}
+
+/* Total de ligne */
+.line-total {
+  font-weight: 700;
+  font-size: 0.85em;
+  color: var(--sale-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Commentaire : compact, ellipsis possible */
+.comment-input-table,
+.comment-input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid transparent;
+  border-radius: var(--sale-radius-sm);
+  padding: 2px 4px;
+  font-size: 0.75em;
+  color: var(--sale-text);
+  background: transparent;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.comment-input::placeholder {
+  color: var(--sale-text-muted);
+  font-style: italic;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: var(--sale-primary);
+  background: var(--sale-surface);
+}
+
+/* Commentaire inline dans le tableau */
+.comment-display {
+  cursor: pointer;
+  font-size: 0.75em;
+  color: var(--sale-text-secondary);
+}
+.comment-display.empty {
+  color: var(--sale-text-muted);
+  font-style: italic;
+}
+
+/* Bouton supprimer : touch target minimum 36px sur mobile */
+.btn-delete,
+.btn-delete-row {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--sale-radius-sm);
+  cursor: pointer;
+  padding: 6px;
+  color: var(--sale-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.btn-delete svg,
+.btn-delete-row svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-delete:hover,
+.btn-delete-row:hover {
+  background: var(--sale-danger-bg);
+  border-color: var(--sale-danger);
+  color: var(--sale-danger);
+}
+
+/* Ligne ajouter */
+.add-article-row td {
+  padding: var(--sale-space-sm);
+  text-align: center;
+}
+
+.btn-add-article {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sale-space-sm);
+  background: var(--sale-success-bg);
+  border: 1px dashed var(--sale-success);
+  border-radius: var(--sale-radius-lg);
+  padding: var(--sale-space-sm) var(--sale-space-lg);
+  cursor: pointer;
+  font-size: 0.82em;
+  font-weight: 500;
+  color: var(--sale-success);
+  transition: all 0.15s;
+  min-height: 40px;
+}
+
+.btn-add-article:hover {
+  background: var(--sale-success);
+  color: white;
+  border-style: solid;
+}
+
+.add-icon {
+  font-size: 1em;
+}
+
+/* État vide */
+.panel-empty {
+  text-align: center;
+  padding: var(--sale-space-xl) var(--sale-space-md);
+  background: var(--sale-surface);
+  border-radius: var(--sale-radius-lg);
+  border: 1px dashed var(--sale-border-medium);
+  margin-bottom: var(--sale-space-md);
+}
+
+.panel-empty .no-articles {
+  color: var(--sale-text-muted);
+  font-size: 0.9em;
+}
+
+/* Navigation mobile */
+.sale-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sale-space-sm);
+  margin-top: var(--sale-space-md);
+  padding: 0 var(--sale-space-xs);
+}
+
+.nav-form-link {
+  display: contents;
+}
+
+.sale-nav-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sale-space-xs);
+  padding: var(--sale-space-sm) var(--sale-space-sm);
+  font-size: 0.82em;
+  font-weight: 600;
+  border-radius: var(--sale-radius-lg);
+  border: 1px solid var(--sale-border-medium);
+  background: var(--sale-surface);
+  color: var(--sale-text);
+  cursor: pointer;
+  transition: all 0.15s;
+  min-height: 44px;
+}
+
+.sale-nav-btn:hover {
+  background: var(--sale-bg-secondary);
+  border-color: var(--sale-border-dark);
+}
+
+.nav-icon {
+  font-size: 1.1em;
+}
+
+.btn-text {
+  white-space: nowrap;
+}
+
+/* -----------------------------------------------------------
+   DESKTOP (>= 768px) — Espacements et tailles normaux
+   ----------------------------------------------------------- */
+@media (min-width: 768px) {
+  .sale-panel-unified {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--sale-space-lg);
+  }
+
+  /* Header horizontal */
+  .panel-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--sale-space-md) var(--sale-space-xl);
+    margin-bottom: var(--sale-space-lg);
+    text-align: left;
+  }
+
+  .panel-header-left {
+    justify-content: flex-start;
+  }
+
+  .panel-header-right {
+    justify-content: flex-end;
+  }
+
+  .panel-total-value {
+    font-size: 1.4em;
+  }
+
+  /* Tableau desktop : font normale */
+  .sale-articles-table {
+    font-size: 1em;
+  }
+
+  .sale-articles-table th {
+    padding: var(--sale-space-sm) var(--sale-space-md);
+    font-size: 0.72em;
+    letter-spacing: 0.06em;
+  }
+
+  /* Colonnes desktop */
+  .col-num     { width: 40px; text-align: center; }
+  .col-cat     { min-width: 200px; max-width: none; }
+  .col-qty     { width: 110px; text-align: center; }
+  .col-price   { width: 130px; text-align: center; }
+  .col-line    { width: 80px; text-align: right; padding-right: var(--sale-space-md); }
+  .col-comment { min-width: 140px; max-width: none; }
+  .col-actions { width: 40px; text-align: center; }
+
+  .col-total   { width: 80px; text-align: right; padding-right: var(--sale-space-md); }
+  .col-action  { width: 44px; text-align: center; }
+
+  .sale-articles-table td {
+    padding: var(--sale-space-sm) var(--sale-space-md);
+  }
+
+  /* Numéro de ligne */
+  .row-number {
+    width: 22px;
+    height: 22px;
+    font-size: 0.7em;
+  }
+
+  /* Catégorie : pas d'ellipse, espace libre */
+  .cell-cat,
+  .cell-val {
+    font-size: 0.82em;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .cell-sub {
+    font-size: 0.75em;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  /* Steppers desktop : compacts */
+  .card-stepper .stepper-btn {
+    min-width: auto;
+    min-height: auto;
+    padding: 2px;
+  }
+
+  .card-stepper .stepper-btn img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .card-stepper .stepper-val {
+    min-width: 28px;
+    font-size: 0.85em;
+    padding: 0 4px;
+  }
+
+  /* Commentaire desktop */
+  .comment-input {
+    min-width: 100px;
+    padding: 4px 6px;
+    font-size: 0.8em;
+  }
+
+  /* Ligne ajouter desktop */
+  .add-article-row td {
+    padding: var(--sale-space-md);
+  }
+
+  .btn-add-article {
+    padding: var(--sale-space-sm) var(--sale-space-xl);
+    font-size: 0.85em;
+  }
+
+  /* État vide desktop */
+  .panel-empty {
+    padding: var(--sale-space-2xl);
+    margin-bottom: var(--sale-space-lg);
+  }
+
+  /* Navigation desktop */
+  .sale-nav {
+    margin-top: var(--sale-space-lg);
+    padding: 0 var(--sale-space-sm);
+  }
+
+  .sale-nav-btn {
+    flex: none;
+    padding: var(--sale-space-sm) var(--sale-space-lg);
+    font-size: 0.85em;
+    min-height: auto;
+  }
+}
+
+/* Masquer les cartes article si elles existent encore (compatibilité) */
+.article-list .article-card,
+.article-card {
+  display: none !important;
+}
+
+/* Cacher les cell-label en desktop (headings verticaux) */
+@media (min-width: 768px) {
+  .cell-label { display: none; }
+}
+/* En mobile, cacher les thead th et utiliser cell-label dans les td */
+@media (max-width: 767px) {
+  .sale-articles-table thead { display: none; }
+  .cell-label {
+    display: block;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    color: var(--sale-text-muted);
+    margin-bottom: 2px;
+  }
+}

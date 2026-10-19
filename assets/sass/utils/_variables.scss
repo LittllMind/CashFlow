@@ -1,0 +1,315 @@
+/*------------------ A C T U A L   C O L O R S E T -------------*/
+$main-background: #487f80;
+$honeydew : #f2faef;
+
+$message-theme: #6f2961;
+$message-theme-light: rgba(111, 41, 97, .3);
+
+$main-background: #487f80;
+;
+$nav-bg-color: #f0fdf4;
+$nav-text-color: #222;
+
+// ===== Variables SCSS (exemples si non déjà définis) =====
+
+$polished-pine: #5a7d7c;
+$baby-powder: #fbfbf2;
+$main-background-soft: #f0f4f8;
+$dark-liver-horses: #534b52;
+$honeydew: #f1fff0;
+$message-theme: #3d5a80;
+$message-theme-light: #98c1d9;
+$silver-pink: #d8a7b1;
+$green-yellow-crayola: #c5e384;
+$dark-liver: #4a4e4d;
+$raisin-black: #202020;
+
+/*----------------------------------------------------------------------------------**/
+$seashell: #FFFFFF;
+$original-black: #3F4045;
+
+$indigo-dye: #274060ff;
+$original-blue: #335c81ff;
+$manatee: #aba9bfff;
+$space-cadet: #1d2951ff;
+
+/* -----------------------------------------------------*/
+
+$main-background-soft: #baecec;
+$myrtle-green: hsla(181, 28%, 39%, 1);
+$terra-cotta: hsla(8, 75%, 65%, 1);
+$rich-black-fogra-29: hsla(228, 25%, 12%, 1);
+$raisin-black: hsla(295, 14%, 16%, 1);
+
+
+/*------------------------------------------------------*/
+
+$gold-number: 1.6180339887;
+$white: white;
+$dark-liver-horses: #503d3fff;
+$dark-liver: rgb(138, 118, 116);
+$dark-liver-soft: #D5B0AC;
+$dark-liver-ultra-soft: #CCB8B6;
+$polished-pine: #539987ff;
+$baby-powder: #fffffcff;
+$silver-pink: rgb(204, 184, 182);
+
+/*----------------------------------------------------------------------------------**/
+
+$grumental: #2E2D2D;
+$baby-powder: #f7f8f2ff;
+$silver-sand: #bdc2bfff;
+$green-yellow-crayola: #487f80;
+$alert: rgb(255, 174, 0);
+$calendar-session-zero: rgb(43, 152, 103);
+$calendar-session-up-zero: rgb(132, 204, 172);
+$submit: rgb(78, 194, 94);
+$delete: #ec4646;
+
+/*$grumental: #2E2D2D;
+$baby-powder: #f7f8f2ff;
+$silver-sand: #bdc2bfff;
+$green-yellow-crayola: #e6e49fff;
+$alert: rgb(255, 174, 0);
+$submit: #88ad71;
+$delete: #E6737E;*/
+
+// ===== Variables de base =====
+$background-light: #f5f7fa;
+$background-card: #ffffff;
+$primary-color: #2a9d8f;
+$primary-hover: darken($primary-color, 10%);
+$text-dark: #222222;
+$text-light: #555555;
+$border-radius: 8px;
+$shadow-card: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+
+/*=============================== M I X I N S ==================================*/
+
+@mixin button {
+    height: 50px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: $submit;
+    box-shadow: $box-shadow;
+    color: $background-primary;
+    border-radius: 35px 35px 35px 35px;
+}
+
+@mixin button-add {
+    height: 50px;
+    padding: 20px;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: $submit;
+    box-shadow: $box-shadow-button;
+    color: $white;
+    border-radius: 10px 10px 10px 10px;
+}
+
+@mixin button-submit {
+    height: 40px;
+    padding: 20px;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: $submit;
+    box-shadow: $box-shadow-button;
+    color: $white;
+    border-radius: 35px 35px 35px 35px;
+}
+
+@mixin button-manage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    text-decoration: none;
+    background-color: $main-background;
+    box-shadow: $box-shadow-button;
+    color: $white;
+    border-radius: 10px 10px 10px 10px;
+}
+
+@mixin button-session {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10%;
+    margin: 1%;
+    padding: 2%;
+    background-color: $silver-pink;
+    box-shadow: $box-shadow-button;
+    color: $dark-liver-horses;
+    border: 3px solid $silver-pink;
+    border-radius: 35px 35px 35px 35px;
+}
+
+@mixin button-delete {
+    height: 40px;
+    padding: 20px;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: $delete;
+    box-shadow: $box-shadow-button;
+    color: $baby-powder;
+    border-radius: 35px 35px 35px 35px;
+}
+
+
+/*=============================== B O X S ==================================*/
+
+$rounded-border: 20px 20px 20px 20px;
+$box-shadow: 0px 0px 0px rgba(0, 0, 0.5, 0.5);
+$box-shadow-button: 0px 0px 0px rgba(0, 0, 0.5, 0.5);
+$box-shadow-hover: 0px 0px 0px rgba(0, 0, 0.5, 0.5);
+
+/*--------------------------------*/
+
+$background-primary: #FFFFFF;
+$background-secondary: #F6F6F6;
+$background-secondary-heavy: #EAEAEA;
+$primary-dark: #353535;
+$buttons: #B862DB;
+$dish-selection-validate: #8EDEC9;
+$operation-number-color: #9356DC;
+$step-info-hover: #F5EDFF;
+$underline: #99E2D0;
+$font-light: #F4EFFB;
+$test: #1818;
+
+/*refacto nom couleurs*/
+
+
+/*=============================== M I X I N S ==================================*/
+
+
+/* type de boutton ? (validation/recherche..etc)*/
+
+@mixin index-title {
+    align-self: flex-start;
+    font-family: $shrikhand;
+    font-size: 1.9em;
+    font-weight: bold;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    padding-left: 4%;
+}
+
+
+/* Et une fonction ?? */
+
+
+/* ------------------------- F A D E   I N -------------------- */
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+
+    /* sur Firefox */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+
+    /* sur Safari et Chrome */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+
+    /* sur Opera */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ------------------------ F A D E   O U T ---------------------- */
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeout {
+
+    /* sur Firefox */
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeout {
+
+    /* sur Safari et Chrome */
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes fadeout {
+
+    /* sur Opera */
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

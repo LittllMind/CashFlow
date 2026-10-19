@@ -1,0 +1,442 @@
+/* urssaf-report.css — styles panneau URSSAF + impression */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+   BASE (ecran + impression)
+   = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.urssaf-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #2d2d2d;
+    background: #fff;
+}
+
+.urssaf-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #3d5a47;
+}
+
+.urssaf-header h1 {
+    font-size: 1.8rem;
+    color: #3d5a47;
+    margin: 0 0 8px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.urssaf-meta {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.urssaf-meta .urssaf-entity { font-weight: 600; }
+
+.urssaf-meta .urssaf-regime {
+    background: #f0f0f0;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+}
+
+.urssaf-period-label {
+    font-size: 1.08rem;
+    color: #666;
+    margin-top: 8px;
+}
+.urssaf-period-label strong {
+    color: #2d2d2d;
+    font-size: 1.15rem;
+}
+
+/* = = = ONGLETS ACTIVITÉ (Niveau 1) = = = */
+.urssaf-tabs-activity {
+    margin-bottom: 0;
+    padding: 0 16px;
+}
+
+.urssaf-tabs-activity .tab-row {
+    display: flex;
+    gap: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    background: #f5f5f5;
+}
+
+.urssaf-tabs-activity .tab-activity {
+    flex: 1;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #777;
+    background: #f0f0f0;
+    border-right: 1px solid #ddd;
+    transition: all .15s ease;
+}
+.urssaf-tabs-activity .tab-activity:last-child {
+    border-right: none;
+}
+.urssaf-tabs-activity .tab-activity:hover {
+    background: #e8e8e8;
+    color: #555;
+}
+.urssaf-tabs-activity .tab-activity--active {
+    background: #3d5a47;
+    color: #fff;
+}
+
+/* = = = ONGLETS PÉRIODICITÉ (Niveau 2) = = = */
+.urssaf-tabs-period {
+    margin-bottom: 16px;
+    padding: 0 16px;
+}
+
+.urssaf-tabs-period .tab-row {
+    display: flex;
+    gap: 0;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-top: 1px solid #c8d4cc;
+    background: #fff;
+}
+
+.urssaf-tabs-period .tab-period {
+    flex: 1;
+    text-align: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: #777;
+    background: #fafafa;
+    border-right: 1px solid #eee;
+    transition: all .15s ease;
+}
+.urssaf-tabs-period .tab-period:last-child {
+    border-right: none;
+}
+.urssaf-tabs-period .tab-period:hover {
+    background: #f0f0f0;
+    color: #555;
+}
+.urssaf-tabs-period .tab-period--active {
+    background: #e8f0ea;
+    color: #3d5a47;
+    font-weight: 700;
+    border-bottom: 3px solid #3d5a47;
+}
+
+/* = = = NAVIGATION = = = */
+.urssaf-nav,
+.urssaf-mode-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-nav,
+.btn-mode {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border: 1.5px solid #e0e0e0;
+    background: #fafafa;
+    color: #555;
+    transition: all .15s ease;
+}
+.btn-nav:hover,
+.btn-mode:hover {
+    background: #f0f0f0;
+    border-color: #bbb;
+}
+
+.btn-mode--active {
+    background: #3d5a47 !important;
+    color: #fff !important;
+    border-color: #3d5a47 !important;
+}
+
+.nav-center {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* = = = ALERTES = = = */
+.urssaf-alert {
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.urssaf-alert--info {
+    background: #eaf2ec;
+    color: #2d5a3d;
+    border: 1px solid #c4d9c8;
+}
+
+/* = = = CARTES CA = = = */
+.urssaf-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.urssaf-card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 14px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform .1s ease;
+}
+.urssaf-card:hover { transform: translateY(-2px); }
+
+.urssaf-card--ca { border-top: 4px solid #3d5a47; }
+.urssaf-card--cash { border-top: 4px solid #c9a227; }
+.urssaf-card--card { border-top: 4px solid #4a90d9; }
+.urssaf-card--cheque { border-top: 4px solid #d4884a; }
+.urssaf-card--transfer { border-top: 4px solid #8a6bc7; }
+
+.card-label {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+}
+
+.card-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    line-height: 1.1;
+}
+
+.card-unit {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #888;
+    margin-left: 2px;
+}
+
+/* = = = METRIQUES = = = */
+.urssaf-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 14px;
+    background: #f6f7f8;
+    border-radius: 12px;
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ececec;
+    flex: 1 1 auto;
+    min-width: 110px;
+}
+
+.metric-val {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* = = = DETAIL TABLE = = = */
+.urssaf-detail h3 {
+    font-size: 1.05rem;
+    color: #3d5a47;
+    margin: 0 0 12px;
+    font-weight: 600;
+}
+
+.detail-table {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #ececec;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.detail-row:last-child { border-bottom: none; }
+
+.detail-row--total {
+    background: #f6f7f8;
+    font-weight: 700;
+    border-top: 2px solid #ddd;
+}
+
+.detail-name { font-size: 0.96rem; color: #444; }
+.detail-value { font-size: 1rem; font-weight: 600; color: #333; }
+
+/* = = = NOTE = = = */
+.urssaf-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+    background: #fff9e6;
+    border: 1px solid #f0e0a0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 0.92rem;
+    color: #665c20;
+}
+.urssaf-note strong { color: #8a6000; }
+
+/* = = = ACTIONS = = = */
+.urssaf-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .15s ease;
+}
+.btn-primary {
+    background: #3d5a47;
+    color: #fff;
+}
+.btn-primary:hover { background: #2e4537; }
+.btn-success {
+    background: #4a8a3d;
+    color: #fff;
+}
+.btn-success:hover { background: #3a7230; }
+.btn--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* = = = PIED PAGE IMPRESSION = = = */
+.urssaf-footer-print {
+    display: none;
+    font-size: 0.7rem;
+    color: #aaa;
+    text-align: center;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px dashed #ddd;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+   IMPRESSION / PDF
+   = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+@media print {
+    @page { margin: 1.5cm; }
+
+    body * { visibility: hidden !important; }
+
+    .urssaf-wrapper,
+    .urssaf-wrapper * { visibility: visible !important; }
+
+    .urssaf-wrapper {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        max-width: none;
+    }
+
+    /* Masquer UI */
+    [data-print="hide"],
+    .navbar-pill,
+    .urssaf-actions,
+    #burger,
+    .btn-nav,
+    .btn-mode,
+    #nav-links {
+        display: none !important;
+    }
+
+    .urssaf-header {
+        border-bottom-color: #2d2d2d !important;
+        margin-bottom: 24px;
+    }
+    .urssaf-header h1 { color: #2d2d2d !important; }
+
+    .urssaf-cards {
+        grid-template-columns: repeat(4, 1fr) !important;
+        page-break-inside: avoid;
+    }
+
+    .urssaf-card {
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+
+    .urssaf-metrics {
+        break-inside: avoid;
+        border: 1px solid #eee;
+    }
+
+    .detail-table {
+        page-break-inside: avoid;
+    }
+
+    .urssaf-footer-print {
+        display: block !important;
+        page-break-before: avoid;
+    }
+}

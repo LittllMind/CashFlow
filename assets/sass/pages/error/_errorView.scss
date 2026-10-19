@@ -1,0 +1,19 @@
+/* ------------------------ E R R O R ----------------*/
+
+.error {
+    height: 100%;
+    /**/
+    &-head {
+        background-color: $baby-powder;
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 20vh;
+    }
+    /**/
+    &-message {
+        color: $alert;
+    }
+}
